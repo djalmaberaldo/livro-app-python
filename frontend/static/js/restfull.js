@@ -1,4 +1,4 @@
-const url='http://127.0.0.1:5000/livro';
+const url='http://127.0.0.1:5000/book';
 var objId = null;
 
 function carregarDados(){
@@ -22,12 +22,12 @@ function carregarFormularioCadastroEdicao(){
 function preencherTabela(livros){
     var rows = "";
     for (var key in livros){
-        var contentRow = "<tr><td>"+livros[key].titulo+"</td>"
-        + "<td>"+livros[key].autor+"</td>"
-        +"<td>"+livros[key].isbn+"</td>"
-        +"<td>"+livros[key].editora+"</td>"
-        +"<td>"+livros[key].edicao+"</td>"
-        +"<td>R$ "+livros[key].preco+",00</td>"
+        var contentRow = "<tr><td>"+livros[key].title+"</td>"
+        + "<td>"+livros[key].author+"</td>"
+        // +"<td>"+livros[key].isbn+"</td>"
+        // +"<td>"+livros[key].editora+"</td>"
+        // +"<td>"+livros[key].edicao+"</td>"
+        // +"<td>R$ "+livros[key].preco+",00</td>"
         +"<td><input type='button' value='Editar' onclick='editarLivro("+livros[key].id+")'>"
         +"<input type='button' value='Excluir' onclick='excluirLivro("+livros[key].id+")'></td>"
         +"</tr>"
