@@ -26,8 +26,8 @@ function preencherTabela(livros){
     for (var key in livros){
         var contentRow = "<tr><td>"+livros[key].title+"</td>"
         + "<td>"+livros[key].author+"</td>"
-        +"<td><input type='button' value='Editar' onclick='editarLivro("+livros[key].id+")'>"
-        +"<input type='button' value='Excluir' onclick='excluirLivro("+livros[key].id+")'></td>"
+        +"<td><ul> <li><button onclick='editarLivro("+livros[key].id+")'> Editar </button></li>"
+        +"<li><button onclick='excluirLivro("+livros[key].id+")'>Excluir</button></li></ul></td>"
         +"</tr>"
         rows = rows + contentRow;
     }

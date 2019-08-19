@@ -12,8 +12,7 @@ body{
 }
 
 .table-area{
-    background-color: #f2f2f2;
-    padding-top: 5rem;
+    padding-top: 2rem;
 }
 
 #form-add {
@@ -60,4 +59,26 @@ caption{
 
 label {
     font-weight: bold;
+}
+
+.content-area {
+    width:70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button {
+    border-radius: 4px;
+    background-color: #008CBA;
+    color:white;
+    border: none;
+    font-size: 16px;
+    text-decoration: none;
+    height:40px;
+}
+
+ul li {
+    list-style-type:none;
+    display: inline;
+    margin: 5px;
 }

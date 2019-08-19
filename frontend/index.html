@@ -12,29 +12,35 @@
         <div class="top-bar" >
             <span >LIVRARIA</span>
         </div>
-        <div id="content-area">
+        <div class="content-area" id="content-area">
             <form name="form-add" id="form-add" class="form-add" width="100%;" >
                 <fieldset>
-                    <legend><h4>Cadastrar/Editar Livro:</h4></legend>
-            
-                <div>
-                    <label for="autor">Autor:</label>
-                    <input required type="text" name="autor" id="author">
-                </div>
-                
-                <div>
-                    <label for="titulo">Título:</label>
-                    <input required type="text" name="titulo" id="title">
-                </div>
-            
-                <input type="button" onclick="cadastrarOuEditarLivro()" value="Adicionar/Editar">
-                <input type="button" value="Cancelar" onclick="cancelarAdicionar();">
-            
+                    <legend><h4>Cadastrar/Editar Livro:</h4></legend>            
+                    <div>
+                        <label for="autor">Autor:</label>
+                        <input required type="text" name="autor" id="author">
+                    </div>
+                    
+                    <div>
+                        <label for="titulo">Título:</label>
+                        <input required type="text" name="titulo" id="title">
+                    </div>
+                    <ul>
+                        <li>
+                            <button onclick="cadastrarOuEditarLivro()"> Adicionar/Editar</button>
+                        </li>
+                        <li>
+                            <button onclick="cancelarAdicionar();">Cancelar </button>          
+                        </li>
+                    </ul>
+                    
                 </fieldset>
             </form>
 
-            <!-- Content -->
             <div id="table-area" class="table-area">
+                <div class="f-right">
+                    <button type="button" onclick="carregarFormularioCadastroEdicao()">Adicionar Livro</button>
+                </div>
                 <table>
                     <caption>
                         <h3>Livros para vender</h3>
@@ -50,9 +56,7 @@
                     
                     </tbody>
                 </table>
-                <div class="f-right">
-                    <input type="button" onclick="carregarFormularioCadastroEdicao()" value="Adicionar Livro">
-                </div>
+               
             </div>
         </div>
     </body>
