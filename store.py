@@ -61,13 +61,13 @@ def get_books():
 # Get Single books
 @app.route('/book/<id>', methods=['GET'])
 def get_book(id):
-  book = book.query.get(id)
+  book = Book.query.get(id)
   return book_schema.jsonify(book)
 
 # Update a book
 @app.route('/book/<id>', methods=['PUT'])
 def update_book(id):
-  book = book.query.get(id)
+  book = Book.query.get(id)
 
   author = request.json['author']
   title = request.json['title']
@@ -82,7 +82,7 @@ def update_book(id):
 # Delete book
 @app.route('/book/<id>', methods=['DELETE'])
 def delete_book(id):
-  book = book.query.get(id)
+  book = Book.query.get(id)
   db.session.delete(book)
   db.session.commit()
 

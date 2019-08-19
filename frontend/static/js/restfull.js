@@ -84,7 +84,7 @@ function editarLivro(id){
     carregarFormularioCadastroEdicao();
     
     //Busca dados do livro
-    fetch(url+'/'+id+'/',{
+    fetch(baseUrl+'/'+id ,{
         method: 'GET'
     })
     .then(function(response){
@@ -96,7 +96,6 @@ function editarLivro(id){
                 objId = response[key];
             }else{
                  //Atribui valores ao campos
-                 console.log(key);
                 document.getElementById(key).value = response[key];
             }
         }
@@ -105,7 +104,7 @@ function editarLivro(id){
 }
 
 function excluirLivro(id){
-    fetch(url+'/'+id+'/',{
+    fetch(baseUrl+'/'+id,{
         method: 'DELETE'
     })
     .then(function(response) { 
