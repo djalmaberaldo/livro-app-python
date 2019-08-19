@@ -1,47 +1,59 @@
 <!DOCTYPE html>
-<head>
-    <title>Livraria</title>
-    <link rel="stylesheet" type="text/css" href="static/style/style.css">
-    <link rel="stylesheet" type="text/css" href="static/style/formStyle.css">
+    <head>
+        <title>Livraria</title>
+        <link rel="stylesheet" type="text/css" href="static/style/style.css">
+        <link rel="stylesheet" type="text/css" href="static/style/formStyle.css">
 
-    <script src="../static/js/restfull.js"></script>
+        <script src="../static/js/restfull.js"></script>
 
-</head>
-<body onload="carregarDados()">
-    <!-- Top bar-->
-    <div class="top-bar" >
-        <span >LIVRARIA</span>
-    </div>
-    
-    <!-- Content -->
-    <div id="table-area" class="table-area">
-
-        <table>
-            <caption>
-                <h3>Livros para vender</h3>
-            </caption>
-            <thead>
-                <tr>
-                    <th>Titulo</th>
-                    <th>Autor</th>
-                    <!-- <th>ISBN</th>
-                    <th>Editora</th>
-                    <th>Edição</th>
-                    <th>Preço</th>-->
-                    <th>Ações</th> 
-                </tr>
-            </thead>
-            <tbody id="content-row">
-            
-            </tbody>
-        </table>
-
-        <div class="f-right">
-            <input type="button" onclick="carregarFormularioCadastroEdicao()" value="Adicionar Livro">
+    </head>
+    <body onload="carregarDados()">
+        <!-- Top bar-->
+        <div class="top-bar" >
+            <span >LIVRARIA</span>
         </div>
-    </div>
+        <div id="content-area">
+            <form name="form-add" id="form-add" class="form-add" width="100%;" >
+                <fieldset>
+                    <legend><h4>Cadastrar/Editar Livro:</h4></legend>
+            
+                <div>
+                    <label for="autor">Autor:</label>
+                    <input required type="text" name="autor" id="autor">
+                </div>
+                
+                <div>
+                    <label for="titulo">Título:</label>
+                    <input required type="text" name="titulo" id="titulo">
+                </div>
+            
+                <input type="button" onclick="cadastrarOuEditarLivro()" value="Adicionar/Editar">
+                <input type="button" value="Cancelar" onclick="cancelarAdicionar();">
+            
+                </fieldset>
+            </form>
 
-
-</body>
-
+            <!-- Content -->
+            <div id="table-area" class="table-area">
+                <table>
+                    <caption>
+                        <h3>Livros para vender</h3>
+                    </caption>
+                    <thead>
+                        <tr>
+                            <th>Titulo</th>
+                            <th>Autor</th>
+                            <th>Ações</th> 
+                        </tr>
+                    </thead>
+                    <tbody id="content-row">
+                    
+                    </tbody>
+                </table>
+                <div class="f-right">
+                    <input type="button" onclick="carregarFormularioCadastroEdicao()" value="Adicionar Livro">
+                </div>
+            </div>
+        </div>
+    </body>
 </html>

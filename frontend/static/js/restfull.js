@@ -1,9 +1,10 @@
-const url='http://127.0.0.1:5000/book';
+const baseUrl ='http://127.0.0.1:5000/book';
 var objId = null;
+let method = 'POST';
 
 function carregarDados(){
 
-    fetch(url,{
+    fetch(baseUrl,{
         method: 'GET'
     })
     .then(function(response){
@@ -16,7 +17,8 @@ function carregarDados(){
 }
 
 function carregarFormularioCadastroEdicao(){
-    window.location = url + '/criar';
+    document.getElementById("form-add").style.display='block';
+    document.getElementById("table-area").style.display='none';
 }
 
 function preencherTabela(livros){
@@ -24,10 +26,6 @@ function preencherTabela(livros){
     for (var key in livros){
         var contentRow = "<tr><td>"+livros[key].title+"</td>"
         + "<td>"+livros[key].author+"</td>"
-        // +"<td>"+livros[key].isbn+"</td>"
-        // +"<td>"+livros[key].editora+"</td>"
-        // +"<td>"+livros[key].edicao+"</td>"
-        // +"<td>R$ "+livros[key].preco+",00</td>"
         +"<td><input type='button' value='Editar' onclick='editarLivro("+livros[key].id+")'>"
         +"<input type='button' value='Excluir' onclick='excluirLivro("+livros[key].id+")'></td>"
         +"</tr>"
@@ -43,24 +41,28 @@ function cancelarAdicionar(){
 }
 
 
-function cadastrarOuEditarLivro(){
+function cadastrarOuEditarLivro() {
 
     //Pega os valores do formulário
-    var formData = {"titulo": document.getElementById("titulo").value,
-    "autor": document.getElementById("autor").value,
-    "isbn": document.getElementById("isbn").value,
-    "preco": document.getElementById("preco").value,
-    "edicao": document.getElementById("edicao").value,
-    "editora": document.getElementById("editora").value,
+    var formData = {"title": document.getElementById("titulo").value,
+    "author": document.getElementById("autor").value,
     "id": objId};
 
     var headers = new Headers();
     headers.append("Content-type","application/json")
 
-    console.log(objId);
+    if(formData.id !== null) {
+        method = 'PUT';
+        url = baseUrl + '/' + formData.id;
+    } else {
+        method = 'POST';
+        url = baseUrl;
+    }
 
-    fetch(url,{
-        method: (formData.id === null ? 'POST':'PUT'),
+    console.log(method);
+
+    fetch( url , {
+        method: method,
         body: JSON.stringify(formData),
         headers: headers
     })
@@ -118,9 +120,5 @@ function excluirLivro(id){
 function limparTabela(){
     document.getElementById("titulo").value = '';
     document.getElementById("autor").value ='';
-    document.getElementById("isbn").value = '';
-    document.getElementById("preco").value = '';
-    document.getElementById("edicao").value ='';
-    document.getElementById("editora").value = '';
     objId = null;
 }
