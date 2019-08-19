@@ -44,8 +44,8 @@ function cancelarAdicionar(){
 function cadastrarOuEditarLivro() {
 
     //Pega os valores do formulário
-    var formData = {"title": document.getElementById("titulo").value,
-    "author": document.getElementById("autor").value,
+    var formData = {"title": document.getElementById("title").value,
+    "author": document.getElementById("author").value,
     "id": objId};
 
     var headers = new Headers();
@@ -58,8 +58,6 @@ function cadastrarOuEditarLivro() {
         method = 'POST';
         url = baseUrl;
     }
-
-    console.log(method);
 
     fetch( url , {
         method: method,
@@ -117,7 +115,7 @@ function excluirLivro(id){
 }
 
 function limparTabela(){
-    document.getElementById("titulo").value = '';
-    document.getElementById("autor").value ='';
+    document.getElementById("title").value = '';
+    document.getElementById("author").value ='';
     objId = null;
 }
