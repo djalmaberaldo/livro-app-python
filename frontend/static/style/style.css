@@ -1,14 +1,30 @@
+html {
+    height: 100%;
+}
+
+
 body{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', Regular;
+    background-color:beige;
+    border: 1px solid black;
+    padding:10px;
+    height: inherit;
 }
 
 .top-bar{
     color: white; 
     background: black; 
-    height: 5rem; 
+    height: 10rem; 
     text-align: center;
     width: 100%;
     font-size: 4rem;
+    display: inline-block;
+
+}
+
+.top-bar span {
+    position: relative;
+    top: 25%
 }
 
 .table-area{
@@ -30,12 +46,16 @@ table, th, td {
 }
 
 th {
+    background-color: gainsboro;
+    text-transform: uppercase;
+}
+
+th {
     font-weight: bold;
     font-size: 20px;
 }
 
 th, td {
-    padding: 5px;
     text-align: center;
 }
 
@@ -43,10 +63,15 @@ td{
     background: white;
 }
 
-input[type="button"]{
+input[type="button"] {
     min-height: 0.8rem;
     border-radius: 2px;
     font-weight: bold;
+}
+
+input[type="text"] {
+    border-radius: 10px;
+    height: 40px;
 }
 
 .f-right{
@@ -58,7 +83,7 @@ caption{
 }
 
 label {
-    font-weight: bold;
+    font-weight: 900;
 }
 
 .content-area {
@@ -74,7 +99,6 @@ button {
     border: none;
     font-size: 16px;
     text-decoration: none;
-    height:40px;
 }
 
 ul li {
