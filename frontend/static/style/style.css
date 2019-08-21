@@ -4,11 +4,8 @@ html {
 
 
 body{
-    font-family: 'Roboto', Regular;
+    font-family: 'Montserrat', sans-serif;
     background-color:beige;
-    border: 1px solid black;
-    padding:10px;
-    height: inherit;
 }
 
 .top-bar{
@@ -41,7 +38,6 @@ table {
 }
 
 table, th, td {
-    border: 1px solid black;
     border-collapse: collapse;
 }
 
@@ -87,7 +83,7 @@ label {
 }
 
 .content-area {
-    width:70%;
+    width:95%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -99,10 +95,15 @@ button {
     border: none;
     font-size: 16px;
     text-decoration: none;
+    height: 3rem;
 }
 
 ul li {
     list-style-type:none;
     display: inline;
     margin: 5px;
+}
+
+fieldset {
+    border: 0;
 }
